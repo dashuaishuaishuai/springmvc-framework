@@ -12,6 +12,8 @@
                 /static/** = anon
                 /userfiles/** = anon
                 /login = authc
+                /user/** = anon
+                /** =authc
             </value>
         </constructor-arg>
     </bean>
@@ -23,30 +25,7 @@
         <property name="loginUrl" value="/rightmanage/login"/>
         <property name="successUrl" value="/rightmanage/main"/>
         <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
-        <property name="filterChainDefinitions">
-            <value>
-                # some example chain definitions:
-                /login.jsp = anon
-                /home.jsp = anon
-                /global/** = anon
-                /user/login.do = anon
-                /user/doLogout.do = logout
-                /user/workspace.do = anon
-                /user/logout.do = anon
-                /style/**=anon
-                /cron/**=anon
-                /disconf-web/**=anon
-                /api/**=anon
-                /images/**=anon
-                /resources/** = anon
-                /admin/** = authc, roles[admin]
-                /docs/** = authc, perms[document:read]
-                /report/** = authc
-                /rightmanage/main=authc
-                #/** = anon
-                # more URL-to-FilterChain definitions here
-            </value>
-        </property>
+        <property name="filterChainDefinitions" ref="shiroFilterChainDefinitions"/>
     </bean>
     <bean id="sessionValidationScheduler"
           class="org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler">
