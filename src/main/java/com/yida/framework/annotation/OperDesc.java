@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
 /**
  * @Title: OperDesc
  * @Description: 操作描述及controller的异常信息
- * @author 人云 wanghwa@si-tech.com.cn
+ * @author
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

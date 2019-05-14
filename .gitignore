@@ -1,0 +1,11 @@
+# idea
+.idea
+springmvc-framework.iml
+
+# target
+target
+
+
+# config
+/config/*
+!/config/default.js

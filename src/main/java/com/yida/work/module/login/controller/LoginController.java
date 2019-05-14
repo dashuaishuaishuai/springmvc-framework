@@ -40,7 +40,7 @@ public class LoginController {
      *
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "/in", method = RequestMethod.POST)
     public Object doLogin(HttpServletRequest request) {
         String userName = request.getParameter("userName");
         String passWord = request.getParameter("passWord");
@@ -80,7 +80,7 @@ public class LoginController {
     /**
      * 登出
      */
-    @RequestMapping(value = "/", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/out", method = RequestMethod.DELETE)
     public Object logout() {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
